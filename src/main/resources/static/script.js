@@ -64,6 +64,14 @@ function buyTicket() {
 
         let ticketsDiv = document.getElementById('tickets');
         ticketsDiv.innerHTML += `<p>${ticket.film}, ${ticket.number}, ${ticket.firstName}, ${ticket.lastName}, ${ticket.phone}, ${ticket.email}</p>`;
+
+        // Clear the form fields
+        document.getElementById('film').value = '';
+        document.getElementById('number').value = '';
+        document.getElementById('firstName').value = '';
+        document.getElementById('lastName').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('email').value = '';
     }
 }
 
