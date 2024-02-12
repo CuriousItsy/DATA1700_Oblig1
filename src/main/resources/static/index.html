@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Ticket Registration Form</title>
     <style>
@@ -12,7 +12,7 @@
 <body>
 <h1>Order Movie Tickets</h1>
 <form id="ticketForm">
-    <label>Choose a film:</label>
+    <label for ="film" >Choose a film:</label>
     <select id="film">
         <option>Inception</option>
         <option>Interstellar</option>
@@ -26,27 +26,27 @@
         <option>The Magical Crown</option>
     </select><span id="filmError" class="error"></span>
     <br/><br/>
-    <label>Number:</label>
-    <input type="number" id="number"><span id="numberError" class="error"></span>
+    <label for="number">Number:</label>
+    <input type="number" id="number" name="number"><span id="numberError" class="error"></span>
     <br/><br/>
-    <label>First Name:</label>
-    <input type="text" id="firstName"><span id="firstNameError" class="error"></span>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"><span id="firstNameError" class="error"></span>
     <br/><br/>
-    <label>Last Name:</label>
-    <input type="text" id="lastName"><span id="lastNameError" class="error"></span>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"><span id="lastNameError" class="error"></span>
     <br/><br/>
-    <label>Telefonnr:</label>
-    <input type="tel" id="phone"><span id="phoneError" class="error"></span>
+    <label for="phone">Telephone number:</label>
+    <input type="tel" id="phone" name="phone"><span id="phoneError" class="error"></span>
     <br/><br/>
-    <label>Epost:</label>
+    <label for="email">Epost:</label>
     <input type="email" id="email"><span id="emailError" class="error"></span>
     <br/><br/>
-    <button type="button" onclick="buyTicket()">Buy ticket</button>
+    <button type="button" onclick="buyTicket();">Buy ticket</button>
 </form>
 <h2>All tickets</h2>
 <br/><br/>
 <div id="tickets"></div>
-<button onclick="deleteAllTickets()">Delete all tickets</button>
+<button type = "button" onclick="deleteAllTickets();">Delete all tickets</button>
 <script src="script.js"></script>
 </body>
 </html>
