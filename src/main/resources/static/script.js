@@ -11,6 +11,11 @@ function buyTicket() {
 
     // Initialize flag variable
     let isFormValid = true;
+    // Define regex patterns
+    let textPattern = /^[a-zA-Z\s]*$/;
+    let numberPattern = /^[0-9]+$/; // Allows only numbers
+    let phonePattern = /^[0-9]{10}$/; // Assuming a 10-digit phone number
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // Validate form values
     if (!film) {
@@ -19,31 +24,31 @@ function buyTicket() {
     } else {
         document.getElementById('filmError').innerText = '';
     }
-    if (!number) {
+    if (!number || !numberPattern.test(number)) {
         document.getElementById('numberError').innerText = 'Please enter a valid number of tickets.';
         isFormValid = false;
     } else {
         document.getElementById('numberError').innerText = '';
     }
-    if (!firstName) {
+    if (!firstName || !textPattern.test(firstName)) {
         document.getElementById('firstNameError').innerText = 'Please enter a valid first name.';
         isFormValid = false;
     } else {
         document.getElementById('firstNameError').innerText = '';
     }
-    if (!lastName) {
+    if (!lastName || !textPattern.test(lastName)) {
         document.getElementById('lastNameError').innerText = 'Please enter a valid last name.';
         isFormValid = false;
     } else {
         document.getElementById('lastNameError').innerText = '';
     }
-    if (!phone) {
+    if (!phone || !phonePattern.test(phone)) {
         document.getElementById('phoneError').innerText = 'Please enter a valid phone number.';
         isFormValid = false;
     } else {
         document.getElementById('phoneError').innerText = '';
     }
-    if (!email) {
+    if (!email || !emailPattern.test(email)) {
         document.getElementById('emailError').innerText = 'Please enter a valid email address.';
         isFormValid = false;
     } else {
